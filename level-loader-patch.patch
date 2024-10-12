@@ -1,0 +1,15 @@
+diff --git a/src/ModSettingPathMapper.py b/src/ModSettingPathMapper.py
+index 616568e..5563501 100644
+--- a/src/ModSettingPathMapper.py
++++ b/src/ModSettingPathMapper.py
+@@ -45,6 +45,10 @@ class ModSettingPathMapper:
+             mod.addPathMap("/", "/")
+             return
+ 
++        if mod.modName == "LethalLevelLoader":
++            mod.addPathMap("/plugins/LethalLevelLoader.dll", "BepInEx/plugins/")
++            return
++
+         # find all .cfg files in the mod folder and add them to the pathmap for /BepInEx/config/
+         modDir = joinPaths(SessionConstants.TEMP_DIR, mod.modName, "/")
+         cfgs = findFileExtsRecursive(modDir, ".cfg", [])
